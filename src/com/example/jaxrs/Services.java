@@ -8,7 +8,7 @@ import javax.ws.rs.Produces;
 public class Services 
 {
 	@GET
-	//@Produces("text/html")	
+	//@Produces("text/html")	 q
 public String  sayHello()
 {
 	//http://localhost:8080/SampleJAXRProj/rest/services
