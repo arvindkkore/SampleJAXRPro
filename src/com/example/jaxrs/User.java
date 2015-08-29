@@ -36,6 +36,7 @@ public class User {
 	
 	public User() {
 		
+		//This is the Text mesasge
 	}
 //	@Override
 //	public String toString() {
