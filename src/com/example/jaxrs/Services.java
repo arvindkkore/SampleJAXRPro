@@ -12,6 +12,6 @@ public class Services
 public String  sayHello()
 {
 	//http://localhost:8080/SampleJAXRProj/rest/services
-return "Hello  Friend";	
+return "Hello  Friend how are you";	
 }
 }
