@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
 @Path("user")
 public class UserDAO 
 {
-  
+  //this is the test Code 
    public static ArrayList<User> arrayList=new ArrayList<User>();
 	
   @GET
