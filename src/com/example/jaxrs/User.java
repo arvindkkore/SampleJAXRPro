@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class User {
  
+ // primr key new
 	//primary Key 
 	int id;
 	
