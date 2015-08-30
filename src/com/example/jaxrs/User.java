@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class User {
  
-	//primary Key 
+	//primary Key 1
 	int id;
 	
 	//UserName
