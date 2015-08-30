@@ -19,10 +19,10 @@ import javax.ws.rs.core.MediaType;
 @Path("user")
 public class UserDAO 
 {
-  //this is the test Code 
+  //this is the test Code 1
    public static ArrayList<User> arrayList=new ArrayList<User>();
 	
-  @GET
+ /* @GET
    @Path("add/{userName}/{password}")
 	//@Path("/add")
 	public void addUse(@PathParam("userName")String userName,@PathParam("password")String password)
@@ -31,21 +31,25 @@ public class UserDAO
 		arrayList.add(new User(arrayList.size()==0?1:arrayList.get(arrayList.size()-1).getId()+1,userName,password));
 		showallUsers();	
 	}
-  
+  */
+ 
   @POST
   @Path("adduser")
   @Consumes("application/json")
+  @Produces("application/json")
 	//@Path("/add")
-	public void addUse(User user)
+	public List<User> addUse(User user)
 	{
 		
 		arrayList.add(user);
-		showallUsers();	
+		return showallUsers();	
 	}
   
 	@GET
 	@Path("delete/{id}")
-	public void deleteUser(@PathParam("id")int id)
+	@Consumes("application/json")
+	@Produces("application/json")
+	public List<User> deleteUser(@PathParam("id")int id)
 	{
 		int index=-1;
 		System.out.println("deleteUser");
@@ -54,12 +58,16 @@ public class UserDAO
 				index=i;				
 			}
 		}
-		arrayList.remove(index);
-		showallUsers();
+		if (index!=-1) {
+			arrayList.remove(index);	
+		}
+		return showallUsers();
 	}
 	@GET
 	@Path("get/{id}")
-	public String getUser(@PathParam("id")int id)
+	@Consumes("application/json")
+	@Produces("application/json")
+	public User getUser(@PathParam("id")int id)
 	{
 		User user=null;
 		for (User user1 : arrayList) {
@@ -70,11 +78,11 @@ public class UserDAO
 			}
 		}
 		
-		return user.toString();
+		return user;
 	}
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<User>  showallUsers()
+	public List<User> showallUsers()
 	{
 	//System.out.println(arrayList);
 	return arrayList;
